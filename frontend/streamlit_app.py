@@ -106,7 +106,7 @@ def change_example() -> None:
 
 # muestra la cabecera y la imagen de presentacion
 st.markdown(
-    '<div class="brand"><strong>UPC - grupo 2</strong></div>',
+    '<div class="brand"><strong>PROGRAMACIÓN LINEAL</strong></div>',
     unsafe_allow_html=True,
 )
 hero_text, hero_image = st.columns([1, 1], gap="large", vertical_alignment="center")
@@ -393,9 +393,3 @@ with evidence:
     st.caption(
         "Variables continuas y tolerancia numerica, no redondees cantidades sin comprobar su factibilidad."
     )
-
-# identifica el curso y el grupo al pie de la pagina
-st.markdown(
-    '<div class="footnote">UPC - grupo 2</div>',
-    unsafe_allow_html=True,
-)
