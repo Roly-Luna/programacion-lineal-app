@@ -1,0 +1,32 @@
+/* tipografia editorial y colores calidos */
+@font-face {font-family: 'Academic'; src: local('Georgia'); font-display: swap;}
+.stApp {background:#fffaf0; color:#16334a;}
+.block-container {max-width:1260px; padding:4.5rem 2rem 3rem;}
+[data-testid="stHeader"] {background:rgba(255,250,240,.94);}
+h1,h2,h3 {font-family:Academic,Georgia,'Times New Roman',serif!important; font-weight:500!important; color:#143349; letter-spacing:-.03em;}
+h1 {font-size:3.35rem!important; line-height:1.06!important; margin-bottom:.4rem!important;}
+h3 {font-size:1.7rem!important;}
+p,label,button {line-height:1.5;}
+.brand {display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #dddcca; padding-bottom:16px; margin-bottom:28px; font-size:11px; letter-spacing:2px; color:#546b71;}
+.brand strong {font-family:Georgia,serif; font-size:24px; letter-spacing:-1px; color:#17394d;}
+.hero-tag {color:#af493a; font-size:11px; font-weight:700; letter-spacing:2px; margin-top:14px;}
+.hero-note {font-size:17px; line-height:1.7; color:#546b71; max-width:450px;}
+.chips {display:flex; flex-wrap:wrap; gap:8px; margin-top:18px;}
+.chips span {background:#edf3e8; color:#28615e; border-radius:999px; padding:5px 12px; font-size:12px;}
+[data-testid="stImage"] img {border-radius:22px;}
+[data-testid="stMetric"] {border-radius:16px; background:#153749; padding:18px 20px; border-bottom:4px solid #e0805f;}
+[data-testid="stMetricLabel"], [data-testid="stMetricLabel"] p {color:#d5e4e4!important; font-size:12px!important;}
+[data-testid="stMetricValue"] {color:#fffaf0!important; font-family:Georgia,serif!important;}
+[data-testid="stMetricValue"] div {font-size:2.15rem!important;}
+[data-testid="stExpander"] {background:#fffdf7; border-radius:12px; border-color:#e1ddcf;}
+[data-testid="stTextInput"] input, [data-testid="stNumberInput"] input {background:#f0f4e9; color:#17394d;}
+[data-baseweb="select"] > div {background:#f0f4e9;}
+[data-testid="stButton"] button {border-radius:10px; min-height:43px;}
+[data-testid="stButton"] button[kind="primary"] {background:#bb493b; color:white; border-color:#bb493b;}
+[data-testid="stButton"] button[kind="primary"]:hover {background:#993b32; border-color:#993b32;}
+[data-testid="stTabs"] [role="tablist"] {gap:25px; border-bottom:1px solid #e1ddcf;}
+[data-testid="stTabs"] [role="tab"] {padding:12px 4px;}
+.context {border-left:3px solid #d07853; padding:8px 18px; margin:14px 0 22px; background:#fff4e0; border-radius:0 12px 12px 0; color:#4f626b; font-size:14px;}
+.level-note {background:#e9f2eb; border-radius:14px; padding:16px; color:#24534e; font-size:14px;}
+.footnote {border-top:1px solid #dddcca; padding-top:18px; margin-top:28px; color:#718185; font-size:11px; letter-spacing:.3px;}
+@media(max-width:700px) {.block-container{padding-left:1rem;padding-right:1rem;} h1{font-size:2.4rem!important;} .brand{letter-spacing:1px;font-size:9px;} }
