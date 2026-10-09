@@ -7,7 +7,7 @@ h1,h2,h3 {font-family:Academic,Georgia,'Times New Roman',serif!important; font-w
 h1 {font-size:3.35rem!important; line-height:1.06!important; margin-bottom:.4rem!important;}
 h3 {font-size:1.7rem!important;}
 p,label,button {line-height:1.5;}
-.brand {display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #dddcca; padding-bottom:16px; margin-bottom:28px; font-size:11px; letter-spacing:2px; color:#546b71;}
+.brand {display:flex; align-items:center; border-bottom:1px solid #dddcca; padding-bottom:16px; margin-bottom:28px; color:#546b71;}
 .brand strong {font-family:Georgia,serif; font-size:24px; letter-spacing:-1px; color:#17394d;}
 .hero-tag {color:#af493a; font-size:11px; font-weight:700; letter-spacing:2px; margin-top:14px;}
 .hero-note {font-size:17px; line-height:1.7; color:#546b71; max-width:450px;}

@@ -79,7 +79,7 @@ EXAMPLES = {
 
 
 # carga los datos del ejemplo y borra el resultado anterior
-def load_example(name):
+def load_example(name: str) -> None:
     data = EXAMPLES[name]
     for key, value in data.items():
         if key != "rows":
@@ -100,13 +100,13 @@ if "academic_started" not in st.session_state:
 
 
 # actualiza los datos al seleccionar otro ejemplo
-def change_example():
+def change_example() -> None:
     load_example(st.session_state["example"])
 
 
 # muestra la cabecera y la imagen de presentacion
 st.markdown(
-    '<div class="brand"><strong>UPC · grupo 2</strong><span>ALGEBRA LINEAL · PROGRAMACION LINEAL</span></div>',
+    '<div class="brand"><strong>UPC - grupo 2</strong></div>',
     unsafe_allow_html=True,
 )
 hero_text, hero_image = st.columns([1, 1], gap="large", vertical_alignment="center")
@@ -121,6 +121,19 @@ with hero_text:
     )
 with hero_image:
     st.image(str(ASSETS / "taller.png"), width="stretch")
+
+# explica el recorrido sin ocupar espacio durante el uso normal
+with st.expander("Como usar esta pagina"):
+    step1, step2, step3 = st.columns(3)
+    with step1:
+        st.markdown("**1. Elige un ejemplo**")
+        st.write("Comienza con un caso preparado o selecciona tu propio problema.")
+    with step2:
+        st.markdown("**2. Ingresa los datos**")
+        st.write("Modifica el objetivo, los productos y los recursos disponibles.")
+    with step3:
+        st.markdown("**3. Calcula y analiza**")
+        st.write("Revisa la respuesta, la region factible y la comprobacion matematica.")
 
 st.selectbox(
     "Elige un punto de partida", list(EXAMPLES), key="example", on_change=change_example
@@ -297,6 +310,10 @@ else:
 chart, evidence = st.tabs(["Grafica", "Comprobacion matematica"])
 # dibuja la region factible y permite mover la recta objetivo
 with chart:
+    st.markdown(
+        '<div class="context"><strong>Como leer la grafica:</strong> la zona azul contiene las combinaciones permitidas, los puntos son los vertices y la estrella marca una solucion optima.</div>',
+        unsafe_allow_html=True,
+    )
     with st.expander("Mover la recta objetivo y ajustar la vista"):
         extent = st.number_input("Alcance de los ejes", min_value=0.01, key="extent")
         if a or b:
@@ -379,6 +396,6 @@ with evidence:
 
 # identifica el curso y el grupo al pie de la pagina
 st.markdown(
-    '<div class="footnote">UPC · GRUPO 2 · ALGEBRA LINEAL · 2026-2</div>',
+    '<div class="footnote">UPC - grupo 2</div>',
     unsafe_allow_html=True,
 )
