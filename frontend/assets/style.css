@@ -32,6 +32,11 @@ p,label,button {line-height:1.5;}
 [data-testid="stTabs"] [role="tablist"] {gap:25px; border-bottom:1px solid #e1ddcf;}
 [data-testid="stTabs"] [role="tab"] {padding:12px 4px;}
 .context {border-left:3px solid #d07853; padding:8px 18px; margin:14px 0 22px; background:#fff4e0; border-radius:0 12px 12px 0; color:#4f626b; font-size:14px;}
+.graph-guide {margin:10px 0 24px; padding:20px 22px; background:#edf3e8; border:1px solid #cddcc9; border-left:5px solid #23877b; border-radius:14px; color:#294959;}
+.graph-guide strong {display:block; margin-bottom:8px; color:#17394d; font-family:Georgia,serif; font-size:21px;}
+.graph-guide p {margin:7px 0; font-size:15px; line-height:1.6;}
+.graph-guide p b {display:inline; font-family:inherit; font-size:inherit; color:#17394d;}
+.graph-guide .graph-warning {margin-top:12px; padding-top:12px; border-top:1px solid #c7d6c3;}
 .level-note {background:#e9f2eb; border-radius:14px; padding:16px; color:#24534e; font-size:14px;}
 .footnote {border-top:1px solid #dddcca; padding-top:18px; margin-top:28px; color:#718185; font-size:11px; letter-spacing:.3px;}
 @media(max-width:700px) {.block-container{padding-left:1rem;padding-right:1rem;} h1{font-size:2.4rem!important;} .brand{align-items:flex-start;flex-direction:column;gap:12px;} .brand nav{justify-content:flex-start;gap:18px;max-width:100%;overflow-x:auto;padding-bottom:4px;} .brand nav a{font-size:12px;} }

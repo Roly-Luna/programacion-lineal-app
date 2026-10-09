@@ -157,7 +157,7 @@ label, unit = st.session_state["label"], st.session_state["unit"]
 unit1, unit2 = st.session_state["unit1"], st.session_state["unit2"]
 
 # recoge los coeficientes y el tipo de optimizacion
-st.subheader("01. Tu objetivo")
+st.subheader("01  Tu objetivo")
 c1, c2, c3 = st.columns([1.1, 1, 1])
 mode = c1.selectbox(
     "Quiero",
@@ -171,7 +171,7 @@ a = c2.number_input(f"{label} por {name1}", key="a")
 b = c3.number_input(f"{label} por {name2}", key="b")
 
 # una sola tabla sustituye los cuadros y botones de cada restriccion
-st.subheader("02. Tus recursos")
+st.subheader("02  Tus recursos")
 st.caption(
     "Edita la tabla como una hoja de calculo, agrega recursos en la ultima fila."
 )
@@ -283,7 +283,7 @@ result = LPResponse.model_validate(st.session_state["result"])
 
 st.divider()
 # presenta el estado y las cantidades de la solucion
-st.subheader("03.  La mejor combinacion")
+st.subheader("03  La mejor combinacion")
 if result.status in ("infeasible", "error"):
     st.error(result.message)
     st.stop()
@@ -310,10 +310,6 @@ else:
 chart, evidence = st.tabs(["Grafica", "Comprobacion matematica"])
 # dibuja la region factible y permite mover la recta objetivo
 with chart:
-    st.markdown(
-        '<div class="context"><strong>Como leer la grafica:</strong> la zona azul contiene las combinaciones permitidas, los puntos son los vertices y la estrella marca una solucion optima.</div>',
-        unsafe_allow_html=True,
-    )
     with st.expander("Mover la recta objetivo y ajustar la vista"):
         extent = st.number_input("Alcance de los ejes", min_value=0.01, key="extent")
         if a or b:
@@ -352,11 +348,15 @@ with chart:
     st.plotly_chart(
         fig, width="stretch", config={"scrollZoom": True, "displaylogo": False}
     )
-    st.caption(
-        "Azul, region factible · rojo, nivel objetivo · estrella, optimo · dorado, soluciones multiples"
-    )
-    st.caption(
-        "La region puede continuar fuera de la ventana visible, sus bordes no son restricciones."
+    st.markdown(
+        """
+        <div class="graph-guide">
+            <strong>Como interpretar la grafica</strong>
+            <p><b>Zona azul:</b> region factible &nbsp;·&nbsp; <b>linea roja:</b> nivel objetivo &nbsp;·&nbsp; <b>estrella:</b> solucion optima &nbsp;·&nbsp; <b>linea dorada:</b> soluciones multiples.</p>
+            <p class="graph-warning"><b>Importante:</b> la region puede continuar fuera de la ventana visible. Los bordes de la ventana no representan restricciones del modelo.</p>
+        </div>
+        """,
+        unsafe_allow_html=True,
     )
 # muestra las ecuaciones y la comprobacion de los resultados
 with evidence:
