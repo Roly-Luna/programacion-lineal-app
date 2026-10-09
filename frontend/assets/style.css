@@ -7,13 +7,8 @@ h1,h2,h3 {font-family:Academic,Georgia,'Times New Roman',serif!important; font-w
 h1 {font-size:3.35rem!important; line-height:1.06!important; margin-bottom:.4rem!important;}
 h3 {font-size:1.7rem!important;}
 p,label,button {line-height:1.5;}
-.brand {display:flex; justify-content:space-between; align-items:center; gap:28px; border-bottom:1px solid #dddcca; padding:0 0 16px; margin-bottom:28px; color:#546b71;}
 .brand {display:flex; align-items:center; border-bottom:1px solid #dddcca; padding:0 0 16px; margin-bottom:28px; color:#546b71;}
 .brand strong {font-family:Georgia,serif; font-size:24px; letter-spacing:-1px; color:#17394d;}
-.brand nav {display:flex; align-items:center; justify-content:flex-end; gap:26px;}
-.brand nav a {color:#294959; font-size:13px; font-weight:600; letter-spacing:.2px; text-decoration:none; white-space:nowrap; transition:color .2s ease;}
-.brand nav a:hover {color:#bb493b;}
-.section-anchor {position:relative; top:-80px; visibility:hidden;}
 .hero-tag {color:#af493a; font-size:11px; font-weight:700; letter-spacing:2px; margin-top:14px;}
 .hero-note {font-size:17px; line-height:1.7; color:#546b71; max-width:450px;}
 .chips {display:flex; flex-wrap:wrap; gap:8px; margin-top:18px;}
@@ -39,5 +34,4 @@ p,label,button {line-height:1.5;}
 .graph-guide .graph-warning {margin-top:12px; padding-top:12px; border-top:1px solid #c7d6c3;}
 .level-note {background:#e9f2eb; border-radius:14px; padding:16px; color:#24534e; font-size:14px;}
 .footnote {border-top:1px solid #dddcca; padding-top:18px; margin-top:28px; color:#718185; font-size:11px; letter-spacing:.3px;}
-@media(max-width:700px) {.block-container{padding-left:1rem;padding-right:1rem;} h1{font-size:2.4rem!important;} .brand{align-items:flex-start;flex-direction:column;gap:12px;} .brand nav{justify-content:flex-start;gap:18px;max-width:100%;overflow-x:auto;padding-bottom:4px;} .brand nav a{font-size:12px;} }
 @media(max-width:700px) {.block-container{padding-left:1rem;padding-right:1rem;} h1{font-size:2.4rem!important;} }
