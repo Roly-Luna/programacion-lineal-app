@@ -1,157 +1,118 @@
 # Proyecto de programacion lineal
 
-Aplicacion web para resolver problemas de programacion lineal con dos variables mediante el metodo grafico. Permite ingresar la funcion objetivo y las restricciones, construir la region factible, evaluar sus vertices y mostrar una solucion optima.
+Esta guia supone que Visual Studio Code y Git ya estan instalados.
 
-## Funciones principales
+## 1. Abrir la terminal de Visual Studio Code
 
-- Resuelve problemas de maximizacion y minimizacion.
-- Admite restricciones `<=`, `>=` e `=`.
-- Grafica las restricciones y la region factible.
-- Identifica los vertices y una solucion optima.
-- Anima el desplazamiento de la recta objetivo.
-- Comprueba que la solucion cumpla las restricciones.
-- Incluye ejemplos listos para probar.
+Abre Visual Studio Code y, en el menu superior, selecciona:
 
-## Requisitos
+```text
+Terminal > New Terminal
+```
 
-- Conexion a internet durante la instalacion inicial.
-- Git para clonar el repositorio.
-- uv para instalar Python y las dependencias del proyecto.
+## 2. Instalar uv en Windows
 
-No es necesario crear manualmente un entorno virtual ni ejecutar `uv init`. El proyecto ya contiene `pyproject.toml` y `uv.lock`.
-
-## Instalacion en Windows
-
-### 1. Instalar Git
-
-Descarga Git desde <https://git-scm.com/download/win> y completa la instalacion con las opciones predeterminadas.
-
-### 2. Instalar uv
-
-Abre PowerShell y ejecuta:
+Si utilizas Windows, copia este comando en la terminal de Visual Studio Code y presiona `Enter`:
 
 ```powershell
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-Cierra PowerShell, abre una ventana nueva y comprueba la instalacion:
+Cuando termine, cierra completamente Visual Studio Code y vuelve a abrirlo.
+
+Abre otra vez `Terminal > New Terminal` y comprueba la instalacion:
 
 ```powershell
 uv --version
 ```
 
-### 3. Descargar el proyecto
+## 3. Instalar uv en macOS
 
-```powershell
-git clone https://github.com/Roly-Luna/proyecto-algebra-lineal.git
-cd proyecto-algebra-lineal
-```
-
-### 4. Instalar Python y las dependencias
-
-```powershell
-uv python install 3.14
-uv sync
-```
-
-### 5. Ejecutar la aplicacion
-
-```powershell
-uv run streamlit run frontend/streamlit_app.py
-```
-
-Streamlit mostrara una direccion local, normalmente <http://localhost:8501>. Si el navegador no se abre automaticamente, copia esa direccion y pegala en el navegador.
-
-## Instalacion en macOS
-
-### 1. Instalar Git
-
-Abre Terminal y ejecuta:
-
-```bash
-git --version
-```
-
-Si Git no esta instalado, macOS mostrara una ventana para instalar las herramientas necesarias. Acepta la instalacion y vuelve a abrir Terminal.
-
-### 2. Instalar uv
+Si utilizas macOS, copia este comando en la terminal de Visual Studio Code y presiona `Enter`:
 
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-Cierra Terminal, abre una ventana nueva y comprueba la instalacion:
+Cuando termine, cierra completamente Visual Studio Code y vuelve a abrirlo.
+
+Abre otra vez `Terminal > New Terminal` y comprueba la instalacion:
 
 ```bash
 uv --version
 ```
 
-### 3. Descargar el proyecto
+## 4. Clonar el proyecto
 
-```bash
-git clone https://github.com/Roly-Luna/proyecto-algebra-lineal.git
-cd proyecto-algebra-lineal
+1. Presiona `Ctrl + Shift + P` en Windows o `Cmd + Shift + P` en macOS.
+2. Escribe `Git: Clone`.
+3. Selecciona **Git: Clone**.
+4. Pega este enlace:
+
+```text
+https://github.com/Roly-Luna/proyecto-algebra-lineal.git
 ```
 
-### 4. Instalar Python y las dependencias
+5. Presiona `Enter`.
+6. Selecciona la carpeta donde guardaras el proyecto.
+7. Espera a que termine la descarga.
+8. Cuando aparezca la pregunta para abrir el repositorio, presiona **Open**.
+9. Si aparece una pregunta de confianza, confirma que confias en los autores.
+
+## 5. Instalar Python y las dependencias
+
+Con el proyecto abierto, selecciona:
+
+```text
+Terminal > New Terminal
+```
+
+Ejecuta estos comandos:
 
 ```bash
 uv python install 3.14
 uv sync
 ```
 
-### 5. Ejecutar la aplicacion
+No ejecutes `uv init`. El proyecto ya contiene `pyproject.toml` y `uv.lock`.
+
+## 6. Ejecutar la aplicacion
+
+En la misma terminal, ejecuta:
 
 ```bash
 uv run streamlit run frontend/streamlit_app.py
 ```
 
-Abre <http://localhost:8501> si la pagina no aparece automaticamente.
+La aplicacion se abrira automaticamente en el navegador.
 
-## Como usar la aplicacion
-
-1. Selecciona un ejemplo o elige `Mi propio problema`.
-2. Define los nombres y las unidades de las dos variables.
-3. Selecciona maximizar o minimizar.
-4. Ingresa los coeficientes de la funcion objetivo.
-5. Agrega las restricciones en la tabla de recursos.
-6. Presiona `Calcular resultado`.
-7. Revisa la solucion, la grafica y la comprobacion matematica.
-
-## Detener la aplicacion
-
-Regresa a la terminal y presiona `Ctrl + C`.
-
-## Estructura principal
+Si no se abre, visita:
 
 ```text
-backend/app/models.py       modelos de entrada y salida
-backend/app/solver.py       calculo matematico
-frontend/streamlit_app.py   interfaz web
-frontend/plotting.py        grafica y animacion
-frontend/assets/            estilos e imagenes
-pyproject.toml              dependencias del proyecto
-uv.lock                     versiones exactas de las dependencias
+http://localhost:8501
 ```
 
-## Problemas frecuentes
+Para detener la aplicacion, regresa a la terminal y presiona `Ctrl + C`.
 
-### El comando uv no existe
+## 7. Descargar futuras actualizaciones
 
-Cierra la terminal, abre una nueva y ejecuta `uv --version`. Si el problema continua, repite la instalacion de uv.
+Cuando el proyecto sea actualizado en GitHub:
 
-### El puerto 8501 esta ocupado
-
-Ejecuta la aplicacion en otro puerto:
+1. Abre la carpeta del proyecto en Visual Studio Code.
+2. Presiona `Ctrl + Shift + P` en Windows o `Cmd + Shift + P` en macOS.
+3. Escribe `Git: Pull`.
+4. Selecciona **Git: Pull**.
+5. Abre `Terminal > New Terminal`.
+6. Ejecuta:
 
 ```bash
-uv run streamlit run frontend/streamlit_app.py --server.port 8502
+uv sync
+uv run streamlit run frontend/streamlit_app.py
 ```
 
-### Los resultados no cambian
+## Uso de la aplicacion
 
-Despues de modificar los datos, vuelve a presionar `Calcular resultado`.
-
-## Integrantes
-
-Grupo 2, Algebra Lineal, Universidad Peruana de Ciencias Aplicadas.
+1. Selecciona un ejemplo o elige `Mi propio problema`.
+2. Ingresa la funcion objetivo y las restricciones.
+3. Presiona `Calcular resultado`.
+4. Revisa la solucion, la grafica y la comprobacion matematica.
