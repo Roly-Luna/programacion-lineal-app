@@ -50,7 +50,7 @@ uv --version
 4. Pega este enlace:
 
 ```text
-https://github.com/Roly-Luna/proyecto-algebra-lineal.git
+https://github.com/Roly-Luna/programacion-lineal-app.git
 ```
 
 5. Presiona `Enter`.
